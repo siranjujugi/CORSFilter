@@ -1,0 +1,5 @@
+2021-04-29 19:58:59.726Z INFO  c.m.applicationinsights.agent - ApplicationInsights Java Agent 3.0.3 started successfully
+2021-04-29 19:58:59.740Z WARN  c.m.a.a.i.AppIdSupplier$GetAppIdTask - unable to retrieve appId received 403 Forbidden from https://eastus2-3.in.applicationinsights.azure.com/api/profiles/3ba54b78-bcfc-4329-acb5-24f4e865d3ce/appId
+full response:
+ Error Code: 402 -- F5-REJECT LinkID: 553741164, srcIP: 10.0.2.6 blocked to eastus2-3.in.applicationinsights. zure.com
+ (future failures will be aggregated and logged once every 5 minutes)
