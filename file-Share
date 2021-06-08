@@ -1,1 +1,1 @@
-api-diff --old.host http://patlabs01.prod.sci.att.com:31580/ --new.host http://pcltabs01.prod.sci.att.com:30117/ --endpoint "/api/K2_OSP2Details" --extra_params token=osp-now format=json --input_csv orders.csv --old.extra_params version=1.1 --output_mode html --output_file diffs.html --concurrency 5 --timeout 20s 
+http://msgrtr-onboarding.test.att.com:8080/dmaap-mr-onboard-ui/
