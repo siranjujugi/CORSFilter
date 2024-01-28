@@ -77,6 +77,11 @@ public class BatchConfiguration {
 
     // Your job and step configurations go here
 
+@Bean
+    public PlatformTransactionManager transactionManager(DataSource dataSource) {
+        return new org.springframework.jdbc.datasource.DataSourceTransactionManager(dataSource);
+    }
+
     @Bean
     public JobRepository jobRepository() throws Exception {
         JobRepositoryFactoryBean factory = new JobRepositoryFactoryBean();
