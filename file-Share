@@ -48,3 +48,46 @@ public class PropertyLogApplication implements CommandLineRunner {
                 });
     }
 }
+
+
+
+
+
+import javax.sql.DataSource;
+
+import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
+import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
+import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@EnableBatchProcessing
+public class BatchConfiguration {
+
+    @Autowired
+    private JobBuilderFactory jobBuilderFactory;
+
+    @Autowired
+    private StepBuilderFactory stepBuilderFactory;
+
+    @Autowired
+    private DataSource dataSource;
+
+    // Your job and step configurations go here
+
+    @Bean
+    public JobRepository jobRepository() throws Exception {
+        JobRepositoryFactoryBean factory = new JobRepositoryFactoryBean();
+        factory.setDataSource(dataSource);
+        factory.setTransactionManager(transactionManager());
+        factory.afterPropertiesSet();
+        return factory.getObject();
+    }
+
+    // Other configurations (Job, Step, ItemReader, ItemProcessor, ItemWriter) go here
+
+    // For illustrative purposes, you can define a simple job here
+}
+
